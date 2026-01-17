@@ -231,6 +231,8 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
 }
 
 .copy-button.copied .icon-check {
@@ -274,36 +276,6 @@ h1 {
 
 .footer .divider {
   color: var(--color-border);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-bg: #ffffff;
-    --color-text: #18181b;
-    --color-text-muted: #71717a;
-    --color-primary: #2563eb;
-    --color-primary-hover: #1d4ed8;
-    --color-border: #e4e4e7;
-    --color-input-bg: #f4f4f5;
-    --color-shadow: rgba(0, 0, 0, 0.06);
-    --color-shadow-hover: rgba(0, 0, 0, 0.1);
-  }
-
-  .url-input:hover {
-    border-color: #d4d4d8;
-  }
-
-  .url-input:focus {
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12), 0 6px 20px var(--color-shadow);
-  }
-
-  .copy-button:hover {
-    background: rgba(37, 99, 235, 0.04);
-  }
-
-  .copy-button.copied {
-    background: rgba(52, 211, 153, 0.1);
-  }
 }
 
 @media (max-width: 640px) {
