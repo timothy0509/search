@@ -32,11 +32,9 @@ function noSearchDefaultPageRender() {
       <footer class="footer">
         <span>A fork of <a href="https://unduck.link" target="_blank">Unduck</a></span>
         <span class="divider">•</span>
-        <a href="https://t3.chat" target="_blank">t3.chat</a>
+        <a href="https://github.com/timothy0509/search" target="_blank">github</a>
         <span class="divider">•</span>
-        <a href="https://x.com/theo" target="_blank">theo</a>
-        <span class="divider">•</span>
-        <a href="https://github.com/t3dotgg/unduck" target="_blank">github</a>
+        <a href="mailto:timothy@hkjc.uk">timothy@hkjc.uk</a>
       </footer>
     </div>
   `;
