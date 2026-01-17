@@ -1,43 +1,38 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"); */
+/* DM Sans + Geist Mono */
 
-/* Font fallback that closely matches Inter metrics */
 @font-face {
-  font-family: "Inter Fallback";
-  size-adjust: 107%;
+  font-family: "DM Sans Fallback";
+  size-adjust: 105%;
   ascent-override: 90%;
   src: local("Arial");
 }
 
+@font-face {
+  font-family: "Geist Mono Fallback";
+  size-adjust: 95%;
+  src: local("Arial");
+}
+
 :root {
-  --color-bg: #ffffff;
-  --color-text: #1e293b;
-  --color-text-muted: #64748b;
-  --color-primary: #3b82f6;
-  --color-primary-hover: #2563eb;
-  --color-border: #e2e8f0;
-  --color-input-bg: #f8fafc;
-  --color-shadow: rgba(15, 23, 42, 0.08);
-  --color-shadow-hover: rgba(15, 23, 42, 0.12);
-  --radius-lg: 16px;
-  --radius-md: 12px;
+  --color-bg: #0a0a0a;
+  --color-text: #ededed;
+  --color-text-muted: #a1a1aa;
+  --color-primary: #60a5fa;
+  --color-primary-hover: #93c5fd;
+  --color-border: #27272a;
+  --color-input-bg: #171717;
+  --color-shadow: rgba(0, 0, 0, 0.4);
+  --color-shadow-hover: rgba(0, 0, 0, 0.5);
+  --radius-lg: 20px;
+  --radius-md: 14px;
   --radius-full: 9999px;
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s ease;
 
-  font-family:
-    Inter,
-    "Inter Fallback",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+  --font-sans: "DM Sans", "DM Sans Fallback", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, monospace;
+
+  font-family: var(--font-sans);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -70,7 +65,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
 }
 
@@ -103,13 +98,13 @@ textarea {
   justify-content: center;
   min-height: 100vh;
   padding: 24px;
-  animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.5s ease-out;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -118,113 +113,115 @@ textarea {
 }
 
 .logo {
-  margin-bottom: 24px;
-  animation: fadeIn 0.6s ease-out 0.1s both;
+  margin-bottom: 28px;
+  animation: fadeIn 0.5s ease-out 0.08s both;
 }
 
 .logo img {
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 24px var(--color-shadow);
+  box-shadow: 0 8px 32px var(--color-shadow);
 }
 
 h1 {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 500;
   letter-spacing: -0.02em;
-  margin-bottom: 8px;
-  animation: fadeIn 0.6s ease-out 0.15s both;
+  margin-bottom: 10px;
+  animation: fadeIn 0.5s ease-out 0.12s both;
 }
 
 .tagline {
   color: var(--color-text-muted);
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 32px;
-  animation: fadeIn 0.6s ease-out 0.2s both;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 36px;
+  animation: fadeIn 0.5s ease-out 0.16s both;
 }
 
 .description {
   max-width: 480px;
   text-align: center;
   color: var(--color-text-muted);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
-  margin-bottom: 40px;
-  animation: fadeIn 0.6s ease-out 0.25s both;
+  margin-bottom: 44px;
+  animation: fadeIn 0.5s ease-out 0.2s both;
 }
 
 .url-container {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
-  max-width: 520px;
-  animation: fadeIn 0.6s ease-out 0.3s both;
+  max-width: 540px;
+  animation: fadeIn 0.5s ease-out 0.24s both;
 }
 
 .url-input {
   flex: 1;
-  padding: 16px 20px;
-  font-size: 15px;
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  padding: 18px 24px;
+  font-size: 14px;
+  font-family: var(--font-mono);
+  font-weight: 400;
   color: var(--color-text);
   background: var(--color-input-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   outline: none;
   transition: all var(--transition-normal);
-  box-shadow: 0 1px 3px var(--color-shadow);
+  box-shadow: 0 2px 4px var(--color-shadow);
+  letter-spacing: -0.01em;
 }
 
 .url-input:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 2px 8px var(--color-shadow-hover);
+  border-color: #3f3f46;
+  box-shadow: 0 4px 12px var(--color-shadow-hover);
 }
 
 .url-input:focus {
   border-color: var(--color-primary);
-  background: var(--color-bg);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15), 0 4px 12px var(--color-shadow);
+  background: #1a1a1a;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15), 0 6px 20px var(--color-shadow);
 }
 
 .url-input::selection {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(96, 165, 250, 0.25);
 }
 
 .copy-button {
   position: relative;
-  padding: 16px;
+  padding: 18px;
   color: var(--color-text-muted);
-  background: var(--color-bg);
+  background: var(--color-input-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   transition: all var(--transition-normal);
-  box-shadow: 0 1px 3px var(--color-shadow);
+  box-shadow: 0 2px 4px var(--color-shadow);
   flex-shrink: 0;
 }
 
 .copy-button:hover {
   color: var(--color-primary);
   border-color: var(--color-primary);
-  background: rgba(59, 130, 246, 0.04);
-  box-shadow: 0 2px 8px var(--color-shadow-hover);
+  background: rgba(96, 165, 250, 0.06);
+  box-shadow: 0 4px 12px var(--color-shadow-hover);
 }
 
 .copy-button:active {
-  transform: scale(0.96);
+  transform: scale(0.95);
 }
 
 .copy-button.copied {
-  color: #10b981;
-  border-color: #10b981;
-  background: rgba(16, 185, 129, 0.08);
+  color: #34d399;
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.08);
 }
 
 .copy-button svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   display: block;
 }
 
@@ -245,30 +242,30 @@ h1 {
 }
 
 .hint {
-  margin-top: 16px;
+  margin-top: 18px;
   font-size: 13px;
   color: var(--color-text-muted);
-  animation: fadeIn 0.6s ease-out 0.35s both;
+  animation: fadeIn 0.5s ease-out 0.28s both;
 }
 
 .footer {
   position: fixed;
-  bottom: 24px;
+  bottom: 28px;
   left: 0;
   right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px 12px;
+  gap: 10px 14px;
   flex-wrap: wrap;
   font-size: 13px;
   color: var(--color-text-muted);
-  animation: fadeIn 0.6s ease-out 0.4s both;
+  animation: fadeIn 0.5s ease-out 0.32s both;
 }
 
 .footer a {
   color: var(--color-text-muted);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .footer a:hover {
@@ -279,43 +276,48 @@ h1 {
   color: var(--color-border);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --color-bg: #0f172a;
-    --color-text: #f1f5f9;
-    --color-text-muted: #94a3b8;
-    --color-primary: #60a5fa;
-    --color-primary-hover: #93c5fd;
-    --color-border: #1e293b;
-    --color-input-bg: #1e293b;
-    --color-shadow: rgba(0, 0, 0, 0.3);
-    --color-shadow-hover: rgba(0, 0, 0, 0.4);
+    --color-bg: #ffffff;
+    --color-text: #18181b;
+    --color-text-muted: #71717a;
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-border: #e4e4e7;
+    --color-input-bg: #f4f4f5;
+    --color-shadow: rgba(0, 0, 0, 0.06);
+    --color-shadow-hover: rgba(0, 0, 0, 0.1);
   }
 
   .url-input:hover {
-    border-color: #334155;
+    border-color: #d4d4d8;
   }
 
   .url-input:focus {
-    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2), 0 4px 12px var(--color-shadow);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12), 0 6px 20px var(--color-shadow);
   }
 
   .copy-button:hover {
-    background: rgba(96, 165, 250, 0.08);
+    background: rgba(37, 99, 235, 0.04);
   }
 
   .copy-button.copied {
-    background: rgba(16, 185, 129, 0.12);
+    background: rgba(52, 211, 153, 0.1);
   }
 }
 
 @media (max-width: 640px) {
   h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .tagline {
     font-size: 16px;
+  }
+
+  .logo img {
+    width: 72px;
+    height: 72px;
   }
 
   .url-container {
@@ -327,7 +329,7 @@ h1 {
   }
 
   .footer {
-    bottom: 16px;
+    bottom: 20px;
     padding: 0 16px;
   }
 }
