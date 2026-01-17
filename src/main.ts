@@ -4,42 +4,52 @@ import "./global.css";
 function noSearchDefaultPageRender() {
   const app = document.querySelector<HTMLDivElement>("#app")!;
   app.innerHTML = `
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
-      <div class="content-container">
-        <h1>Und*ck</h1>
-        <p>DuckDuckGo's bang redirects are too slow. Add the following URL as a custom search engine to your browser. Enables <a href="https://duckduckgo.com/bang.html" target="_blank">all of DuckDuckGo's bangs.</a></p>
-        <div class="url-container"> 
-          <input 
-            type="text" 
-            class="url-input"
-            value="https://unduck.link?q=%s"
-            readonly 
-          />
-          <button class="copy-button">
-            <img src="/clipboard.svg" alt="Copy" />
-          </button>
-        </div>
+    <div class="landing-container">
+      <div class="logo">
+        <img src="/TimoSearch.png" alt="TimoSearch" />
       </div>
+      <h1>TimoSearch</h1>
+      <p class="tagline">Fast, private search with bangs</p>
+      <p class="description">DuckDuckGo's bang redirects are too slow. Add the URL below as a custom search engine in your browser to search directly on <a href="https://duckduckgo.com/bang.html" target="_blank">10,000+ sites</a> instantly.</p>
+      <div class="url-container"> 
+        <input 
+          type="text" 
+          class="url-input"
+          value="https://search.hkjc.uk?q=%s"
+          readonly 
+        />
+        <button class="copy-button" title="Copy to clipboard">
+          <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
+      </div>
+      <p class="hint">Paste the URL above into your browser's search engine settings</p>
       <footer class="footer">
+        <span>A fork of <a href="https://unduck.link" target="_blank">Unduck</a></span>
+        <span class="divider">•</span>
         <a href="https://t3.chat" target="_blank">t3.chat</a>
-        •
+        <span class="divider">•</span>
         <a href="https://x.com/theo" target="_blank">theo</a>
-        •
+        <span class="divider">•</span>
         <a href="https://github.com/t3dotgg/unduck" target="_blank">github</a>
       </footer>
     </div>
   `;
 
   const copyButton = app.querySelector<HTMLButtonElement>(".copy-button")!;
-  const copyIcon = copyButton.querySelector("img")!;
   const urlInput = app.querySelector<HTMLInputElement>(".url-input")!;
 
   copyButton.addEventListener("click", async () => {
     await navigator.clipboard.writeText(urlInput.value);
-    copyIcon.src = "/clipboard-check.svg";
+    copyButton.classList.add("copied");
 
     setTimeout(() => {
-      copyIcon.src = "/clipboard.svg";
+      copyButton.classList.remove("copied");
     }, 2000);
   });
 }
